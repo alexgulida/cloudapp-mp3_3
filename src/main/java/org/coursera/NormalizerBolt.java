@@ -33,7 +33,7 @@ public class NormalizerBolt extends BaseBasicBolt {
     ------------------------------------------------- */
 	 
 	    
-	  String tuple_lowered = tuple.getString(0).toLowerCase();
+	  String tuple_lowered = tuple.getString(0).toLowerCase().trim();
 	  if (!commonWords.contains(tuple_lowered)) {
 		  collector.emit(new Values (tuple_lowered));
 	  }
